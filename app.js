@@ -51,7 +51,7 @@ function renderAgente(xml, id) {
     ctx.innerHTML = `
         <div class="dashboard-grid">
             <div class="card-zzz border-s" style="text-align:center;">
-                <div style="width:100%; height:200px; background:#111; margin-bottom:15px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#444;"><img src="${item.querySelector('imagen_perfil').textContent}" alt="Perfil de ${item.querySelector('nombre').textContent}" style="max-height:100%; max-width:100%; border-radius:8px; object-fit:contain;"></div>
+                <div style="width:100%; height:200px; background:#111; margin-bottom:15px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#444;"><img src="./${item.querySelector('imagen_perfil').textContent}" alt="Perfil de ${item.querySelector('nombre').textContent}" style="max-height:100%; max-width:100%; border-radius:8px; object-fit:contain;"></div>
                 <h2 style="font-size:2.2rem; color:var(--accent-red); margin:5px 0;">${item.querySelector('nombre').textContent}</h2>
                 <p style="text-transform:uppercase; color:var(--text-muted); font-size:0.85rem;">${item.querySelector('faccion').textContent}</p>
             </div>
