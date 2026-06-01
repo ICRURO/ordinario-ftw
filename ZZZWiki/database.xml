@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <agentes>
+        <agente id="ellen_joe">
+            <nombre>Ellen Joe</nombre>
+            <rango>S</rango>
+            <atributo>Glacial</atributo>
+            <estilo>Corte (Atacante)</estilo>
+            <faccion>Victoria Housekeeping</faccion>
+            <imagen_perfil>recursos/Agent_Ellen_joe_Icon.webp</imagen_perfil>
+            <logo_faccion>recursos/Faction_Victoria_Housekeeping_Co._Icon.webp</logo_faccion>
+        </agente>
+    </agentes>
+
+    <wengines>
+            <wengine id_agente="ellen_joe" prioridad="1">
+                <nombre>Deep Sea Visitor</nombre>
+                <rareza>S</rareza>
+                <efecto>Aumenta el daño de Hielo un 25%. Tras usar un Ataque Dash cargado, la Probabilidad de Crítico aumenta un 10% durante 8s.</efecto>
+                <imagen_arma>https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4d/W-Engine_Deep_Sea_Visitor.png</imagen_arma>
+            </wengine>
+    </wengines>
+
+    <drive_discs id_agente="ellen_joe"> //Añadir imagenes de discos
+        <sets>
+            <set_principal>4pc Woodpecker Electro</set_principal>
+            <set_secundario>2pc Polar Metal</set_secundario>
+        </sets>
+        <estadisticas>
+            <main_stats>IV: CRIT Rate/DMG | V: ICE DMG | VI: ATK%</main_stats>
+            <sub_stats>CRIT Rate/DMG > ATK% > PEN (Penetración)</sub_stats>
+        </estadisticas>
+    </drive_discs>
+
+    <bangboos>
+        <bangboo id_agente="ellen_joe">
+            <nombre>Sharkboo</nombre>
+            <raridad>S</raridad>
+            <habilidad>Despliega trampas de tiburón que muerden acumulando anomalía de atributo de hielo un 100% más rápido.</habilidad>
+            <imagen_boo>https://static.wikia.nocookie.net/zenless-zone-zero/images/6/6c/Sharkboo_Portrait.png</imagen_boo>
+        </bangboo>
+    </bangboos>
+</database>
