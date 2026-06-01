@@ -7,7 +7,7 @@
             <atributo>Glacial</atributo>
             <estilo>Corte (Atacante)</estilo>
             <faccion>Victoria Housekeeping</faccion>
-            <imagen_perfil>recursos/Agent_Ellen_joe_Icon.webp</imagen_perfil>
+            <imagen_perfil>recursos/Agent_Ellen_Joe_Icon.webp</imagen_perfil>
             <logo_faccion>recursos/Faction_Victoria_Housekeeping_Co._Icon.webp</logo_faccion>
         </agente>
     </agentes>
