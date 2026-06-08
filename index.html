@@ -10,25 +10,29 @@
     <a href="index.html" style="text-decoration:none; color:inherit;">
         <h1>Inter-Knot Database</h1>
     </a>
-    <div class="subtitle">Terminal de Registro del Investigador de Cavidades</div>
+    <div class="subtitle">Terminal de Registro de agentes</div>
 </header>
 
-<main>
-    <section class="card-zzz" style="margin-bottom: 20px; border-top-color: var(--accent-neon);">
-        <h2>Acceso a Red Proxy</h2>
-        <div id="login-form" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-            <label for="user">Usuario:</label>
-            <input type="text" id="user" placeholder="Ingresa tu ID">
-            <label for="pass">Contraseña:</label>
-            <input type="password" id="pass" placeholder="Clave de acceso">
-            <button id="btn-login">Verificar Credenciales</button>
-            <span id="login-msg" aria-live="polite" style="font-weight:bold; margin-left:10px;"></span>
+<main style="display: flex; justify-content: center; align-items: center; min-height: 60vh;">
+    <section class="card-zzz" style="border-top-color: var(--accent-neon); width: 100%; max-width: 400px; text-align: center;">
+        <h2 style="margin-bottom: 20px;">Acceso a Red Proxy</h2>
+        <div id="login-form" style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
+            <div style="width: 100%; text-align: left;">
+                <label for="user" style="display: block; margin-bottom: 5px;">Usuario:</label>
+                <input type="text" id="user" placeholder="Ingresa tu ID" style="width: 100%; box-sizing: border-box; padding: 10px;">
+            </div>
+            <div style="width: 100%; text-align: left;">
+                <label for="pass" style="display: block; margin-bottom: 5px;">Contraseña:</label>
+                <input type="password" id="pass" placeholder="Clave de acceso" style="width: 100%; box-sizing: border-box; padding: 10px;">
+            </div>
+            <button id="btn-login" style="width: 100%; padding: 10px; margin-top: 10px;">Verificar Credenciales de acceso</button>
+            <span id="login-msg" aria-live="polite" style="font-weight:bold; margin-top: 5px; display: block; min-height: 20px;"></span>
         </div>
     </section>
 </main>
 
 <footer style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem;">
-    <p>&copy; 2026 Proxy Network - Proyecto Final FTW.</p>
+    <p>&copy; 2026 InterKnot - Proyecto Final FTW.</p>
 </footer>
 
 <script src="app.js"></script>
