@@ -245,7 +245,7 @@
             <nombre>Demonio cohibido</nombre>
             <rareza>A</rareza>
             <efecto>Aumenta el daño glacial en un 24 %. Al ejecutar técnica especial EX, aumenta el Ataque de todos en un 3.2 % por 12s (4 cargas).</efecto>
-            <imagen_arma>recursos/W-Engine_Bashful_Demon_icon.webp</imagen_arma>
+            <imagen_arma>recursos/W-Engine_Bashful_Demon_Icon.webp</imagen_arma>
         </wengine_def>
         <wengine_def id="w_compilador">
             <nombre>Compilador quimérico</nombre>
