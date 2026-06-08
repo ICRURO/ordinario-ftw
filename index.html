@@ -6,11 +6,31 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+    <header>
     <a href="index.html" style="text-decoration:none; color:inherit;">
         <h1>Inter-Knot Database</h1>
     </a>
     <div class="subtitle">Terminal de Registro del Investigador de Cavidades</div>
-    <div id="lista-ctx">Cargando datos de Inter-Knot...</div>
-    <script src="app.js"></script>
+</header>
+
+<main>
+    <section class="card-zzz" style="margin-bottom: 20px; border-top-color: var(--accent-neon);">
+        <h2>Acceso a Red Proxy</h2>
+        <div id="login-form" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <label for="user">Usuario:</label>
+            <input type="text" id="user" placeholder="Ingresa tu ID">
+            <label for="pass">Contraseña:</label>
+            <input type="password" id="pass" placeholder="Clave de acceso">
+            <button id="btn-login">Verificar Credenciales</button>
+            <span id="login-msg" aria-live="polite" style="font-weight:bold; margin-left:10px;"></span>
+        </div>
+    </section>
+</main>
+
+<footer style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem;">
+    <p>&copy; 2026 Proxy Network - Proyecto Final FTW.</p>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>

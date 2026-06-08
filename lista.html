@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proxy Network - Lista de Agentes</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+    <a href="index.html" style="text-decoration:none; color:inherit;">
+        <h1>Inter-Knot Database</h1>
+    </a>
+    <div class="subtitle">Terminal de Registro del Investigador de Cavidades</div>
+    </header>
+
+<main>
+    <section class="card-zzz" style="margin-bottom: 20px;">
+        <h2>Base de Datos: Filtros</h2>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: center; margin-top: 10px;">
+            <div>
+                <label for="filtro-texto" style="font-weight:bold; display:block;">Buscar por Nombre/Facción:</label>
+                <input type="search" id="filtro-texto" placeholder="Ej. Victoria...">
+            </div>
+            <div>
+                <label for="filtro-rareza" style="font-weight:bold; display:block;">Rareza:</label>
+                <select id="filtro-rareza" style="padding: 10px; background: #111; color: white; border: 1px solid var(--text-muted); border-radius: 4px;">
+                    <option value="">Todas</option>
+                    <option value="S">Rango S</option>
+                    <option value="A">Rango A</option>
+                </select>
+            </div>
+            <div>
+                <label for="filtro-elemento" style="font-weight:bold; display:block;">Elemento:</label>
+                <select id="filtro-elemento" style="padding: 10px; background: #111; color: white; border: 1px solid var(--text-muted); border-radius: 4px;">
+                    <option value="">Todos</option>
+                    <option value="Glacial">Glacial</option>
+                    <option value="Eléctrico">Eléctrico</option>
+                    <option value="Ígneo">Ígneo</option>
+                    <option value="Físico">Físico</option>
+                    <option value="Éter">Éter</option>
+                </select>
+            </div>
+            <div>
+                <label for="filtro-estilo" style="font-weight:bold; display:block;">Estilo:</label>
+                <select id="filtro-estilo" style="padding: 10px; background: #111; color: white; border: 1px solid var(--text-muted); border-radius: 4px;">
+                    <option value="">Todos</option>
+                    <option value="Corte - Atacante">Corte - Atacante</option>
+                    <option value="Corte - Aturdidor">Corte - Aturdidor</option>
+                    <option value="Corte - Auxiliar">Corte - Auxiliar</option>
+                    <option value="Golpe - Aturdidor">Golpe - Aturdidor</option>
+                    <option value="Golpe - Auxiliar">Golpe - Auxiliar</option>
+                    <option value="Golpe - Defensivo">Golpe - Defensivo</option>
+                    <option value="Perforación - Anómalo">Perforación - Anómalo</option>
+                    <option value="Perforación - Atacante">Perforación - Atacante</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <div id="lista-ctx" aria-live="polite">Cargando datos de Inter-Knot...</div>
+</main>
+
+<footer style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem;">
+    <p>&copy; 2026 InterKnot - Proyecto Final FTW.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

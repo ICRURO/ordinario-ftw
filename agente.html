@@ -6,19 +6,37 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+    <header>
     <a href="index.html" style="text-decoration:none; color:inherit;">
         <h1>Inter-Knot Database</h1>
     </a>
     <div class="subtitle">Terminal de Registro del Investigador de Cavidades</div>
-    <nav>
+    <nav aria-label="Navegación principal">
         <a id="link-agente" href="#">Agente</a>
         <a id="link-wengines" href="#">W-Engines</a>
         <a id="link-discos" href="#">Discos</a>
         <a id="link-bangboo" href="#">Bangboo</a>
         <a id="link-sinergia" href="#">Equipos</a>
-        <a id="link-habilidades" href="#">Habilidades</a>
     </nav>
-    <div id="agente-ctx">Cargando datos de Inter-Knot...</div>
-    <script src="app.js"></script>
+</header>
+
+<main>
+    <main>
+    <article>
+        <section id="agente-ctx" aria-live="polite">
+            Cargando datos de Inter-Knot...
+        </section>
+        
+        <aside id="dinamic-cita-ctx" style="margin-top: 20px; padding: 15px; border-left: 4px solid var(--accent-neon); background-color: var(--bg-card);">
+            </aside>
+    </article>
+</main>
+</main>
+
+<footer style="text-align: center; margin-top: 40px; padding: 20px 0; color: var(--text-muted); border-top: 1px solid #333;">
+    <p>&copy; 2026 Proxy Network - Proyecto Final FTW.</p>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>

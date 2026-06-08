@@ -1,43 +1,700 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE database [
+  <!ELEMENT database (usuarios, agentes, wengines, drive_discs, bangboos, equipos, habilidades_lista)>
+  <!ELEMENT usuarios (usuario+)>
+  <!ELEMENT usuario (user, pass)>
+  <!ELEMENT user (#PCDATA)>
+  <!ELEMENT pass (#PCDATA)>
+  <!ELEMENT agentes (agente+)>
+  <!ELEMENT agente (nombre, rango, atributo, estilo, faccion, imagen_perfil, logo_faccion, cita)>
+  <!ATTLIST agente id ID #REQUIRED>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT rango (#PCDATA)>
+  <!ELEMENT atributo (#PCDATA)>
+  <!ELEMENT estilo (#PCDATA)>
+  <!ELEMENT faccion (#PCDATA)>
+  <!ELEMENT imagen_perfil (#PCDATA)>
+  <!ELEMENT logo_faccion (#PCDATA)>
+  <!ELEMENT cita (#PCDATA)>
+  <!ELEMENT wengines (wengine+)>
+  <!ELEMENT wengine (nombre, rareza, efecto, imagen_arma)>
+  <!ATTLIST wengine id_agente IDREF #REQUIRED prioridad CDATA #REQUIRED>
+  <!ELEMENT rareza (#PCDATA)>
+  <!ELEMENT efecto (#PCDATA)>
+  <!ELEMENT imagen_arma (#PCDATA)>
+  <!ELEMENT drive_discs (sets, estadisticas)>
+  <!ATTLIST drive_discs id_agente IDREF #REQUIRED>
+  <!ELEMENT sets (set_principal, set_secundario)>
+  <!ELEMENT set_principal (nombre, piezas, efecto, imagen_disco)>
+  <!ELEMENT set_secundario (nombre, piezas, efecto, imagen_disco)>
+  <!ELEMENT piezas (#PCDATA)>
+  <!ELEMENT imagen_disco (#PCDATA)>
+  <!ELEMENT estadisticas (main_stats, sub_stats)>
+  <!ELEMENT main_stats (#PCDATA)>
+  <!ELEMENT sub_stats (#PCDATA)>
+  <!ELEMENT bangboos (bangboo+)>
+  <!ELEMENT bangboo (nombre, rareza, habilidad, imagen_boo)>
+  <!ATTLIST bangboo id_agente IDREF #REQUIRED>
+  <!ELEMENT rareza (#PCDATA)>
+  <!ELEMENT habilidad (#PCDATA)>
+  <!ELEMENT imagen_boo (#PCDATA)>
+  <!ELEMENT equipos (equipo+)>
+  <!ELEMENT equipo (comp, motivo)>
+  <!ATTLIST equipo id_agente IDREF #REQUIRED>
+  <!ELEMENT comp (#PCDATA)>
+  <!ELEMENT motivo (#PCDATA)>
+  <!ELEMENT habilidades_lista (skills+)>
+  <!ELEMENT skills (orden)>
+  <!ATTLIST skills id_agente IDREF #REQUIRED>
+  <!ELEMENT orden (#PCDATA)>
+]>
 <database>
+    <usuarios>
+        <usuario>
+            <user>Phaethon</user>
+            <pass>Proxy2026</pass>
+        </usuario>
+    </usuarios>
+
     <agentes>
         <agente id="ellen_joe">
             <nombre>Ellen Joe</nombre>
             <rango>S</rango>
             <atributo>Glacial</atributo>
-            <estilo>Corte (Atacante)</estilo>
-            <faccion>Victoria Housekeeping</faccion>
+            <estilo>Corte - Atacante</estilo>
+            <faccion>Servicios Domésticos Victoria</faccion>
             <imagen_perfil>recursos/Agent_Ellen_Joe_Icon.webp</imagen_perfil>
-            <logo_faccion>recursos/Faction_Victoria_Housekeeping_Co._Icon.webp</logo_faccion>
+            <cita>Terminemos aquí. Estoy cansado." "Un momento, déjame comprobar... Todavía hay... ¡quedan dos preguntas!" "... zzz..." "¿Señorita Ellen? ¿Señorita Ellen? Ya está dormida...</cita>
+        </agente>
+        <agente id="anby_demara">
+            <nombre>Anby Demara</nombre>
+            <rango>A</rango>
+            <atributo>Eléctrico</atributo>
+            <estilo>Corte - Aturdidor</estilo>
+            <faccion>Liebres Astutas</faccion>
+            <imagen_perfil>recursos/Agent_Anby_Demara_Icon.webp</imagen_perfil>
+            <cita>Una joven misteriosa que nunca habla de su pasado, casi como si no tuviera uno. Es calmada y serena, y inusualmente competente y eficiente en combate, casi como si hubiera tenido años de entrenamiento. En un incidente inesperado, Nicole la llevó a las Liebres Astutas, y desde entonces tiene una dependencia emocional sobre ella. Le encanta ver películas, pero debido a cierta falta de sentido común parece que casi piensa que son historias reales.</cita>
+        </agente>
+        <agente id="billy_kid">
+            <nombre>Billy Kid</nombre>
+            <rango>A</rango>
+            <atributo>Físico</atributo>
+            <estilo>Perforación - Atacante</estilo>
+            <faccion>Liebres Astutas</faccion>
+            <imagen_perfil>recursos/Agent_Billy_Kid_Icon.webp</imagen_perfil>
+            <cita>Un ciborg apuesto con una personalidad casual y despreocupada. Es un gran fan de la serie Starlight Knight, no solo se refiere a sí mismo como uno de los Starlight Knights, sino que repite muchas frases clásicas de la serie. Se refiere a su par de revólveres especiales de gran calibre hechos a medida como "las chicas". Parece que fueron un regalo de un viejo amigo. Puede parecer poco fiable, pero una vez que se pone serio, Billy puede afrontar cualquier desafío.</cita>
+        </agente>
+        <agente id="von_lycaon">
+            <nombre>Von Lycaon</nombre>
+            <rango>S</rango>
+            <atributo>Glacial</atributo>
+            <estilo>Golpe - Aturdidor</estilo>
+            <faccion>Servicios Domésticos Victoria</faccion>
+            <imagen_perfil>recursos/Agent_Von_Lycaon_Icon.webp</imagen_perfil>
+            <cita>Puede resolver cualquier asunto. Los asistentes más confiables y un apoyo sólido para cualquier equipo. Racional y sabio, un verdadero caballero que no tolera ni una sola mancha. Ofrece lealtad absoluta a quien decide seguir. Aunque exteriormente sofisticado y racional, su carácter salvaje innato se revela cuando se enfrenta a ciertos peligros.</cita>
+        </agente>
+        <agente id="nicole_demara">
+            <nombre>Nicole Demara</nombre>
+            <rango>A</rango>
+            <atributo>Éter</atributo>
+            <estilo>Golpe - Auxiliar</estilo>
+            <faccion>Liebres Astutas</faccion>
+            <imagen_perfil>recursos/Agent_Nicole_Demara_Icon.webp</imagen_perfil>
+            <cita>La líder de la agencia de trabajos ocasionales las Liebres Astutas, que aceptan todo tipo de encargos relacionados con los Hollows. Ha estado en la calle durante muchos años y tiene fama entre sus compañeros de ser extremadamente astuta. Ha sido incluida en la lista negra por muchos clientes debido a su enfoque de todo o nada. Le encanta el dinero, pero es sorprendentemente mala gestionándolo, dejando a las Liebres Astutas constantemente al borde de la bancarrota y con muchas deudas.</cita>
+        </agente>
+        <agente id="koleda_belobog">
+            <nombre>Koleda Belobog</nombre>
+            <rango>S</rango>
+            <atributo>Ígneo</atributo>
+            <estilo>Golpe - Aturdidor</estilo>
+            <faccion>Construcciones Belobog</faccion>
+            <imagen_perfil>recursos/Agent_Koleda_Belobog_Icon.webp</imagen_perfil>
+            <cita>Una joven feroz que también es presidenta. La joven líder al frente de Belobog Industries. Una presidenta que lidera con el ejemplo. Prefiere entrenar en el terreno antes que quedarse atrapada en un escritorio.</cita>
+        </agente>
+        <agente id="grace_howard">
+            <nombre>Grace Howard</nombre>
+            <rango>S</rango>
+            <atributo>Eléctrico</atributo>
+            <estilo>Perforación - Anómalo</estilo>
+            <faccion>Construcciones Belobog</faccion>
+            <imagen_perfil>recursos/Agent_Grace_Howard_Icon.webp</imagen_perfil>
+            <cita>¿Pasa algo raro con el audio de tu micrófono?" "Hmm, es posible que un pelo suelto haya encerrado..." "¿Te importa si reviso tu mecanismo?</cita>
+        </agente>
+        <agente id="anton_ivanov">
+            <nombre>Anton Ivanov</nombre>
+            <rango>A</rango>
+            <atributo>Eléctrico</atributo>
+            <estilo>Perforación - Atacante</estilo>
+            <faccion>Construcciones Belobog</faccion>
+            <imagen_perfil>recursos/Agent_Anton_Ivanov_Icon.webp</imagen_perfil>
+            <cita>Lidera a otros en su pasión por el trabajo Es un miembro sénior del personal de Belobog Industries, es un gestor de proyectos in situ que siempre está listo para trabajar.</cita>
+        </agente>
+        <agente id="ben_bigger">
+            <nombre>Ben Bigger</nombre>
+            <rango>A</rango>
+            <atributo>Ígneo</atributo>
+            <estilo>Golpe - Defensivo</estilo>
+            <faccion>Construcciones Belobog</faccion>
+            <imagen_perfil>recursos/Agent_Ben_Bigger_Icon.webp</imagen_perfil>
+            <cita>Cuerpo fuerte y alma honesta Esas patas podrían romper huesos, por suerte están ocupadas tecleando en una calculadora.</cita>
+        </agente>
+        <agente id="nekomata">
+            <nombre>Nekomata</nombre>
+            <rango>S</rango>
+            <atributo>Físico</atributo>
+            <estilo>Corte - Atacante</estilo>
+            <faccion>Liebres Astutas</faccion>
+            <imagen_perfil>recursos/Agent_Nekomata_Icon.webp</imagen_perfil>
+            <cita>Enérgica y traviesa, le gusta gastar bromas a los demás. Tu cartera es la de ella. (De verdad... Ahora es suya.) Atlética y atrevida, ningún Hollow es demasiado peligroso para ella. "A los gatos les encanta el pescado" en realidad es un estereotipo incorrecto. Pero a Nekomata le encantan los peces... Ha visto muchos momentos de atrofia felina y de "la curiosidad ha matado al gato", y ha visto muchos secretos que no se pueden contar.</cita>
+        </agente>
+        <agente id="corin_wickes">
+            <nombre>Corin Wickes</nombre>
+            <rango>A</rango>
+            <atributo>Físico</atributo>
+            <estilo>Corte - Atacante</estilo>
+            <faccion>Victoria Housekeeping</faccion>
+            <imagen_perfil>recursos/Agent_Corin_Wickes_Icon.webp</imagen_perfil>
+            <cita>¿Motosierra? ... ¿¡Una motosierra?!</cita>
+        </agente>
+        <agente id="soukaku">
+            <nombre>Soukaku</nombre>
+            <rango>A</rango>
+            <atributo>Glacial</atributo>
+            <estilo>Corte - Auxiliar</estilo>
+            <faccion>División N.°6</faccion>
+            <imagen_perfil>recursos/Agent_Soukaku_Icon.webp</imagen_perfil>
+            <cita>"Glotón" — el nombre que más se ha llamado a Soukaku.
+</cita>
+        </agente>
+        <agente id="rina">
+            <nombre>Rina</nombre>
+            <rango>S</rango>
+            <atributo>Eléctrico</atributo>
+            <estilo>Golpe - Auxiliar</estilo>
+            <faccion>Servicios Domésticos Victoria</faccion>
+            <imagen_perfil>recursos/Agent_Rina_Icon.webp</imagen_perfil>
+            <cita>Madre mía, ¿has visto la hora? Acabo de preparar unos aperitivos~" "Permíteme traerlos para todos~" "¡Ah! No, no, gracias!!" "E-Todavía tenemos otra entrevista la próxima... ¡Nos vamos ya!</cita>
+        </agente>
+        <agente id="soldier_11">
+            <nombre>Soldier 11</nombre>
+            <rango>S</rango>
+            <atributo>Ígneo</atributo>
+            <estilo>Corte - Atacante</estilo>
+            <faccion>Obol Squad</faccion>
+            <imagen_perfil>recursos/Agent_Soldier_11_Icon.webp</imagen_perfil>
+            <cita>Un soldado ejemplar que sigue órdenes y se mantiene leal a la misión... Al menos eso es lo que el Soldado 11 se exige a sí misma.</cita>
         </agente>
     </agentes>
 
-    <wengines>
-            <wengine id_agente="ellen_joe" prioridad="1">
-                <nombre>Deep Sea Visitor</nombre>
-                <rareza>S</rareza>
-                <efecto>Aumenta el daño de Hielo un 25%. Tras usar un Ataque Dash cargado, la Probabilidad de Crítico aumenta un 10% durante 8s.</efecto>
-                <imagen_arma>https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4d/W-Engine_Deep_Sea_Visitor.png</imagen_arma>
-            </wengine>
-    </wengines>
+    <diccionario_wengines>
+        <wengine_def id="w_visitante">
+            <nombre>Visitante de altamar</nombre>
+            <rareza>S</rareza>
+            <efecto>Aumenta el daño glacial en un 50 %. Al golpear a un enemigo aumenta la Probabilidad de Crítico en un 20 % durante 8 s.</efecto>
+            <imagen_arma>recursos/W-Engine_Deep_Sea_Visitor.webp</imagen_arma>
+        </wengine_def>
+        <wengine_def id="w_petrazufre">
+            <nombre>Petrazufre (The Brimstone)</nombre>
+            <rareza>S</rareza>
+            <efecto>Al golpear a un enemigo por medio de un ataque normal, rápido o contraataque, aumenta el Ataque del portador en un 7 % por 8 s. Acumulable hasta 8 veces.</efecto>
+            <imagen_arma>recursos/W-Engine_The_Brimstone.webp</imagen_arma>
+        </wengine_def>
+        <wengine_def id="w_motor_estelar">
+            <nombre>Motor Estelar</nombre>
+            <rareza>A</rareza>
+            <efecto>Al ejecutar un contraataque o un apoyo rápido, aumenta el Ataque del portador en un 19.2 % durante 12 s.</efecto>
+            <imagen_arma>recursos/W-Engine_Starlight_Engine.webp</imagen_arma>
+        </wengine_def>
+        <wengine_def id="w_bateria_demara">
+            <nombre>Batería de Demara (II)</nombre>
+            <rareza>A</rareza>
+            <efecto>Aumenta el daño eléctrico en un 24 %. Al contraatacar, aumenta la Tasa de Energía del portador en un 27.5 % durante 8 s.</efecto>
+            <imagen_arma>recursos/W-Engine_Demara_Battery_Mark_II_Icon.webp</imagen_arma>
+        </wengine_def>
+        <wengine_def id="w_sometido">
+            <nombre>El sometido</nombre>
+            <rareza>S</rareza>
+            <efecto>Aumenta el daño y el Aturdimiento provocados por ataque normal en un 12 % durante 8 s. Pueden acumularse hasta 5 cargas.</efecto>
+            <imagen_arma>recursos/W-Engine_The_Restrained_Icon.webp</imagen_arma>
+        </wengine_def>
+        <wengine_def id="w_engranaje_infernal">
+            <nombre>Engranaje infernal</nombre>
+            <rareza>S</rareza>
+            <efecto>Al encontrarse inactivo, aumenta la Recuperación de Energía en 1.2 ptos./s. Al ejecutar una técnica especial EX, aumenta el Impacto un 20%.</efecto>
+            <imagen_arma>recursos/W-Engine_Hellfire_Gears_Icon.webp</imagen_arma>
+        </wengine_def>
+        <wengine_def id="w_almohadillas">
+            <nombre>Almohadillas férreas</nombre>
+            <rareza>S</rareza>
+            <efecto>Aumenta el daño físico en un 40 %. Al golpear a un enemigo por la espalda, aumenta el daño infligido en un 50 %.</efecto>
+            <imagen_arma>recursos/W-Engine_Steel_Cushion_Icon.webp</imagen_arma>
+        </wengine_def>
+        <wengine_def id="w_camara_acorazada">
+            <nombre>Cámara acorazada</nombre>
+            <rareza>A</rareza>
+            <efecto>Al infligir daño etéreo, aumenta el daño de todas las unidades sobre el objetivo en un 24 % y la Recuperación de Energía en 0.8 ptos./s.</efecto>
+            <imagen_arma>recursos/W-Engine_The_Vault_Icon.webp</imagen_arma>
+        </wengine_def>
+        <wengine_def id="w_cuna_planidera">
+            <nombre>Cuna plañidera</nombre>
+            <rareza>S</rareza>
+            <efecto>Al estar inactivo, la Recuperación aumenta en 1.2 ptos./s. Al golpear al enemigo, el daño recibido por este aumenta hasta un 19.8%.</efecto>
+            <imagen_arma>recursos/W-Engine_Weeping_Cradle_Icon.webp</imagen_arma>
+        </wengine_def>
+        <wengine_def id="w_demonio_cohibido">
+            <nombre>Demonio cohibido</nombre>
+            <rareza>A</rareza>
+            <efecto>Aumenta el daño glacial en un 24 %. Al ejecutar técnica especial EX, aumenta el Ataque de todos en un 3.2 % por 12s (4 cargas).</efecto>
+            <imagen_arma>recursos/W-Engine_Bashful_Demon_icon.webp</imagen_arma>
+        </wengine_def>
+        <wengine_def id="w_compilador">
+            <nombre>Compilador quimérico</nombre>
+            <rareza>S</rareza>
+            <efecto>Aumenta el Ataque en un 24 %. Al ejecutar técnica especial, aumenta la Maestría de Anomalía en 50 ptos. (3 cargas).</efecto>
+            <imagen_arma>recursos/W-Engine_Fusion_Compiler_Icon.webp</imagen_arma>
+        </wengine_def>
+        <wengine_def id="w_taladradora">
+            <nombre>Taladradora giratoria</nombre>
+            <rareza>A</rareza>
+            <efecto>Después de usar una técnica especial EX, aumenta el daño eléctrico en un 80 % durante 10 s.</efecto>
+            <imagen_arma>recursos/W-Engine_Drill_Rig_-_Red_Axis_Icon.webp</imagen_arma>
+        </wengine_def>
+        <wengine_def id="w_cilindro">
+            <nombre>Cilindro neumático</nombre>
+            <rareza>A</rareza>
+            <efecto>Reduce el daño recibido en un 12 %. Al recibir un golpe, el próximo ataque será daño crítico con base en la Defensa.</efecto>
+            <imagen_arma>recursos/W-Engine_Big_Cylinder_Icon.webp</imagen_arma>
+        </wengine_def>
+        <wengine_def id="w_amo_llaves">
+            <nombre>Amo de llaves</nombre>
+            <rareza>A</rareza>
+            <efecto>Aumenta la Recuperación de Energía pasiva. Al golpear con técnica especial EX, aumenta el daño físico.</efecto>
+            <imagen_arma>recursos/W-Engine_Housekeeper_Icon.webp</imagen_arma>
+        </wengine_def>
+    </diccionario_wengines>
 
-    <drive_discs id_agente="ellen_joe"> //Añadir imagenes de discos
-        <sets>
-            <set_principal>4pc Woodpecker Electro</set_principal>
-            <set_secundario>2pc Polar Metal</set_secundario>
-        </sets>
-        <estadisticas>
-            <main_stats>IV: CRIT Rate/DMG | V: ICE DMG | VI: ATK%</main_stats>
-            <sub_stats>CRIT Rate/DMG > ATK% > PEN (Penetración)</sub_stats>
-        </estadisticas>
-    </drive_discs>
+    <wengines_equipados>
+        <wengine_agente id_agente="ellen_joe" id_wengine="w_visitante" prioridad="1"/>
+        <wengine_agente id_agente="ellen_joe" id_wengine="w_petrazufre" prioridad="2"/>
+        <wengine_agente id_agente="ellen_joe" id_wengine="w_motor_estelar" prioridad="3"/>
+        <wengine_agente id_agente="anby_demara" id_wengine="w_bateria_demara" prioridad="1"/>
+        <wengine_agente id_agente="anby_demara" id_wengine="w_sometido" prioridad="2"/>
+        <wengine_agente id_agente="anby_demara" id_wengine="w_engranaje_infernal" prioridad="3"/>
+        <wengine_agente id_agente="billy_kid" id_wengine="w_motor_estelar" prioridad="1"/>
+        <wengine_agente id_agente="billy_kid" id_wengine="w_almohadillas" prioridad="2"/>
+        <wengine_agente id_agente="billy_kid" id_wengine="w_petrazufre" prioridad="3"/>
+        <wengine_agente id_agente="von_lycaon" id_wengine="w_sometido" prioridad="1"/>
+        <wengine_agente id_agente="von_lycaon" id_wengine="w_engranaje_infernal" prioridad="2"/>
+        <wengine_agente id_agente="nicole_demara" id_wengine="w_camara_acorazada" prioridad="1"/>
+        <wengine_agente id_agente="nicole_demara" id_wengine="w_cuna_planidera" prioridad="2"/>
+        <wengine_agente id_agente="nicole_demara" id_wengine="w_demonio_cohibido" prioridad="3"/>
+        <wengine_agente id_agente="koleda_belobog" id_wengine="w_engranaje_infernal" prioridad="1"/>
+        <wengine_agente id_agente="koleda_belobog" id_wengine="w_sometido" prioridad="2"/>
+        <wengine_agente id_agente="grace_howard" id_wengine="w_compilador" prioridad="1"/>
+        <wengine_agente id_agente="anton_ivanov" id_wengine="w_taladradora" prioridad="1"/>
+        <wengine_agente id_agente="anton_ivanov" id_wengine="w_petrazufre" prioridad="2"/>
+        <wengine_agente id_agente="anton_ivanov" id_wengine="w_motor_estelar" prioridad="3"/>
+        <wengine_agente id_agente="ben_bigger" id_wengine="w_cilindro" prioridad="1"/>
+        <wengine_agente id_agente="ben_bigger" id_wengine="w_almohadillas" prioridad="2"/>
+        <wengine_agente id_agente="nekomata" id_wengine="w_almohadillas" prioridad="1"/>
+        <wengine_agente id_agente="nekomata" id_wengine="w_motor_estelar" prioridad="2"/>
+        <wengine_agente id_agente="nekomata" id_wengine="w_petrazufre" prioridad="3"/>
+        <wengine_agente id_agente="corin_wickes" id_wengine="w_amo_llaves" prioridad="1"/>
+        <wengine_agente id_agente="corin_wickes" id_wengine="w_almohadillas" prioridad="2"/>
+        <wengine_agente id_agente="corin_wickes" id_wengine="w_petrazufre" prioridad="3"/>
+        <wengine_agente id_agente="soukaku" id_wengine="w_demonio_cohibido" prioridad="1"/>
+        <wengine_agente id_agente="soukaku" id_wengine="w_camara_acorazada" prioridad="2"/>
+        <wengine_agente id_agente="soukaku" id_wengine="w_cuna_planidera" prioridad="3"/>
+        <wengine_agente id_agente="rina" id_wengine="w_cuna_planidera" prioridad="1"/>
+        <wengine_agente id_agente="rina" id_wengine="w_demonio_cohibido" prioridad="2"/>
+        <wengine_agente id_agente="soldier_11" id_wengine="w_petrazufre" prioridad="1"/>
+        <wengine_agente id_agente="soldier_11" id_wengine="w_motor_estelar" prioridad="2"/>
+        <wengine_agente id_agente="soldier_11" id_wengine="w_almohadillas" prioridad="3"/>
+    </wengines_equipados>
 
-    <bangboos>
-        <bangboo id_agente="ellen_joe">
-            <nombre>Sharkboo</nombre>
-            <raridad>S</raridad>
-            <habilidad>Despliega trampas de tiburón que muerden acumulando anomalía de atributo de hielo un 100% más rápido.</habilidad>
-            <imagen_boo>https://static.wikia.nocookie.net/zenless-zone-zero/images/6/6c/Sharkboo_Portrait.png</imagen_boo>
-        </bangboo>
-    </bangboos>
+    <diccionario_discos>
+        <disco_def id="d_polar">
+            <nombre>Metal polar</nombre>
+            <efecto>Aumenta el daño glacial y potencia los ataques tras aplicar congelación.</efecto>
+            <imagen_disco>recursos/Drive_Disc_Polar_Metal_icon.webp</imagen_disco>
+        </disco_def>
+        <disco_def id="d_woodpecker">
+            <nombre>Tecno pícido</nombre>
+            <efecto>Probabilidad de Crítico +8 %.</efecto>
+            <imagen_disco>recursos/Drive_Disc_Woodpecker_Electro_icon.webp</imagen_disco>
+        </disco_def>
+        <disco_def id="d_shockstar">
+            <nombre>Disco sacudestrellas</nombre>
+            <efecto>Impacto +6 %. Aumenta masivamente el aturdimiento infligido.</efecto>
+            <imagen_disco>recursos/Drive_Disc_Shockstar_Disco_icon.webp</imagen_disco>
+        </disco_def>
+        <disco_def id="d_swing_jazz">
+            <nombre>Jazz Oscilante</nombre>
+            <efecto>Recuperación de Energía +20 %. Aumenta daño del equipo tras definitiva.</efecto>
+            <imagen_disco>recursos/Drive_Disc_Swing_Jazz_icon.webp</imagen_disco>
+        </disco_def>
+        <disco_def id="d_dawn_bloom">
+            <nombre>Floración del amanecer</nombre>
+            <efecto>Aumenta el daño de ataque básico y potencia su uso.</efecto>
+            <imagen_disco>recursos/Drive_Disc_Dawn_Bloom_Icon.webp</imagen_disco>
+        </disco_def>
+        <disco_def id="d_chaotic_metal">
+            <nombre>Metal caótico</nombre>
+            <efecto>Daño etéreo +10 %.</efecto>
+            <imagen_disco>recursos/Drive_Disc_Chaotic_Metal_icon.webp</imagen_disco>
+        </disco_def>
+        <disco_def id="d_thunder_metal">
+            <nombre>Thunder Metal</nombre>
+            <efecto>Aumenta el ATK cuando el enemigo sufre Electrocución.</efecto>
+            <imagen_disco>recursos/Drive_Disc_Thunder_Metal_Icon.webp</imagen_disco>
+        </disco_def>
+        <disco_def id="d_freedom_blues">
+            <nombre>Freedom Blues</nombre>
+            <efecto>Aumenta la Maestría de Anomalía un 30%.</efecto>
+            <imagen_disco>recursos/Drive_Disc_Freedom_Blues_Icon.webp</imagen_disco>
+        </disco_def>
+        <disco_def id="d_soul_rock">
+            <nombre>Soul Rock</nombre>
+            <efecto>Aumenta Defensa y mitiga daño al recibir ataques.</efecto>
+            <imagen_disco>recursos/Drive_Disc_Soul_Rock_Icon.webp</imagen_disco>
+        </disco_def>
+        <disco_def id="d_fanged_metal">
+            <nombre>Fanged Metal</nombre>
+            <efecto>Aumenta dramáticamente el daño físico tras infligir Asalto.</efecto>
+            <imagen_disco>recursos/Drive_Disc_Fanged_Metal_Icon.webp</imagen_disco>
+        </disco_def>
+        <disco_def id="d_hormone_punk">
+            <nombre>Hormone Punk</nombre>
+            <efecto>Aumenta ATK base un 10%.</efecto>
+            <imagen_disco>recursos/Drive_Disc_Hormone_Punk_Icon.webp</imagen_disco>
+        </disco_def>
+        <disco_def id="d_puffer_electro">
+            <nombre>Puffer Electro</nombre>
+            <efecto>Aumenta la Tasa de Penetración un 8%.</efecto>
+            <imagen_disco>recursos/Drive_Disc_Puffer_Electro_Icon.webp</imagen_disco>
+        </disco_def>
+        <disco_def id="d_inferno_metal">
+            <nombre>Inferno Metal</nombre>
+            <efecto>Aumenta el Crítico al golpear a un enemigo quemado.</efecto>
+            <imagen_disco>recursos/Drive_Disc_Inferno_Metal_Icon.webp</imagen_disco>
+        </disco_def>
+    </diccionario_discos>
+
+    <drive_discs_equipados>
+        <drive_discs id_agente="ellen_joe">
+            <sets>
+                <set_principal id_disco="d_polar" piezas="4"/>
+                <set_secundario id_disco="d_woodpecker" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: CRIT Rate/DMG | V: Glacial DMG | VI: ATK%</main_stats>
+                <sub_stats>CRIT Rate/DMG > ATK% > PEN</sub_stats>
+            </estadisticas>
+        </drive_discs>
+        <drive_discs id_agente="anby_demara">
+            <sets>
+                <set_principal id_disco="d_shockstar" piezas="4"/>
+                <set_secundario id_disco="d_swing_jazz" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: Impacto | V: Electric DMG | VI: Energy Regen</main_stats>
+                <sub_stats>CRIT Rate/DMG > ATK% > Anomalía</sub_stats>
+            </estadisticas>
+        </drive_discs>
+        <drive_discs id_agente="billy_kid">
+            <sets>
+                <set_principal id_disco="d_dawn_bloom" piezas="4"/>
+                <set_secundario id_disco="d_woodpecker" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: CRIT Rate | V: Physical DMG | VI: ATK%</main_stats>
+                <sub_stats>CRIT Rate/DMG > ATK% > PEN</sub_stats>
+            </estadisticas>
+        </drive_discs>
+        <drive_discs id_agente="von_lycaon">
+            <sets>
+                <set_principal id_disco="d_shockstar" piezas="4"/>
+                <set_secundario id_disco="d_swing_jazz" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: Impacto | V: ICE DMG | VI: Energy Regen</main_stats>
+                <sub_stats>Impacto > ATK% > Defensa</sub_stats>
+            </estadisticas>
+        </drive_discs>
+        <drive_discs id_agente="nicole_demara">
+            <sets>
+                <set_principal id_disco="d_swing_jazz" piezas="4"/>
+                <set_secundario id_disco="d_chaotic_metal" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: Anomalía | V: Ether DMG | VI: Energy Regen</main_stats>
+                <sub_stats>Regen. Energía > Anomalía > HP%</sub_stats>
+            </estadisticas>
+        </drive_discs>
+        <drive_discs id_agente="koleda_belobog">
+            <sets>
+                <set_principal id_disco="d_shockstar" piezas="4"/>
+                <set_secundario id_disco="d_swing_jazz" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: Impacto | V: Fire DMG | VI: Energy Regen</main_stats>
+                <sub_stats>Impacto > ATK% > Defensa</sub_stats>
+            </estadisticas>
+        </drive_discs>
+        <drive_discs id_agente="grace_howard">
+            <sets>
+                <set_principal id_disco="d_thunder_metal" piezas="4"/>
+                <set_secundario id_disco="d_freedom_blues" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: Anomalía | V: Electric DMG | VI: Anomalía / ATK%</main_stats>
+                <sub_stats>Anomalía > PEN > ATK%</sub_stats>
+            </estadisticas>
+        </drive_discs>
+        <drive_discs id_agente="anton_ivanov">
+            <sets>
+                <set_principal id_disco="d_thunder_metal" piezas="4"/>
+                <set_secundario id_disco="d_woodpecker" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: CRIT Rate/DMG | V: Electric DMG | VI: ATK%</main_stats>
+                <sub_stats>CRIT Rate/DMG > ATK% > PEN</sub_stats>
+            </estadisticas>
+        </drive_discs>
+        <drive_discs id_agente="ben_bigger">
+            <sets>
+                <set_principal id_disco="d_soul_rock" piezas="4"/>
+                <set_secundario id_disco="d_shockstar" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: DEF% | V: Fire DMG / DEF% | VI: DEF%</main_stats>
+                <sub_stats>DEF% > HP% > Impacto</sub_stats>
+            </estadisticas>
+        </drive_discs>
+        <drive_discs id_agente="nekomata">
+            <sets>
+                <set_principal id_disco="d_fanged_metal" piezas="4"/>
+                <set_secundario id_disco="d_woodpecker" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: CRIT Rate/DMG | V: Physical DMG | VI: ATK%</main_stats>
+                <sub_stats>CRIT Rate/DMG > ATK% > PEN</sub_stats>
+            </estadisticas>
+        </drive_discs>
+        <drive_discs id_agente="corin_wickes">
+            <sets>
+                <set_principal id_disco="d_fanged_metal" piezas="4"/>
+                <set_secundario id_disco="d_woodpecker" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: CRIT Rate/DMG | V: Physical DMG | VI: Energy Regen</main_stats>
+                <sub_stats>CRIT Rate/DMG > Regen. Energía > ATK%</sub_stats>
+            </estadisticas>
+        </drive_discs>
+        <drive_discs id_agente="soukaku">
+            <sets>
+                <set_principal id_disco="d_swing_jazz" piezas="4"/>
+                <set_secundario id_disco="d_hormone_punk" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: ATK% | V: ATK% | VI: Energy Regen</main_stats>
+                <sub_stats>ATK% > Regen. Energía > PEN</sub_stats>
+            </estadisticas>
+        </drive_discs>
+        <drive_discs id_agente="rina">
+            <sets>
+                <set_principal id_disco="d_swing_jazz" piezas="4"/>
+                <set_secundario id_disco="d_puffer_electro" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: Tasa de PEN | V: PEN / Electric DMG | VI: Energy Regen</main_stats>
+                <sub_stats>Tasa de PEN > Regen. Energía > ATK%</sub_stats>
+            </estadisticas>
+        </drive_discs>
+        <drive_discs id_agente="soldier_11">
+            <sets>
+                <set_principal id_disco="d_inferno_metal" piezas="4"/>
+                <set_secundario id_disco="d_woodpecker" piezas="2"/>
+            </sets>
+            <estadisticas>
+                <main_stats>IV: CRIT Rate/DMG | V: Fire DMG | VI: ATK%</main_stats>
+                <sub_stats>CRIT Rate/DMG > ATK% > PEN</sub_stats>
+            </estadisticas>
+        </drive_discs>
+    </drive_discs_equipados>
+
+    <diccionario_bangboos>
+        <bangboo_def id="b_tiburonboo">
+            <nombre>Tiburonboo</nombre>
+            <rareza>S</rareza>
+            <habilidad>Prensa al enemigo y lanza torpedos que infligen daño glacial masivo.</habilidad>
+            <imagen_boo>recursos/Sharkboo_Portrait.webp</imagen_boo>
+        </bangboo_def>
+        <bangboo_def id="b_amillion">
+            <nombre>Amillion</nombre>
+            <rareza>S</rareza>
+            <habilidad>Instala una ametralladora en el suelo que dispara continuamente, infligiendo daño físico.</habilidad>
+            <imagen_boo>recursos/Amillion_Portrait.webp</imagen_boo>
+        </bangboo_def>
+        <bangboo_def id="b_mayordomo">
+            <nombre>Mayordomo (Butlerboo)</nombre>
+            <rareza>S</rareza>
+            <habilidad>Regenera energía pasiva e intensivamente para el agente en combate activo.</habilidad>
+            <imagen_boo>recursos/Butler_Portrait.webp</imagen_boo>
+        </bangboo_def>
+        <bangboo_def id="b_safety">
+            <nombre>Safety</nombre>
+            <rareza>S</rareza>
+            <habilidad>Se monta en púa mecánica para infligir daño ígneo e impacto adicional a facciones aliadas.</habilidad>
+            <imagen_boo>recursos/Safety_Portrait.webp</imagen_boo>
+        </bangboo_def>
+        <bangboo_def id="b_plugboo">
+            <nombre>Plugboo</nombre>
+            <rareza>S</rareza>
+            <habilidad>Acumula Anomalía eléctrica con pulsos constantes electromagnéticos.</habilidad>
+            <imagen_boo>recursos/Plugboo_Portrait.webp</imagen_boo>
+        </bangboo_def>
+        <bangboo_def id="b_electroboo">
+            <nombre>Electroboo</nombre>
+            <rareza>A</rareza>
+            <habilidad>Lanza descargas eléctricas en área que reaccionan con ataques similares.</habilidad>
+            <imagen_boo>recursos/Electroboo_Portrait.webp</imagen_boo>
+        </bangboo_def>
+        <bangboo_def id="b_penguinboo">
+            <nombre>Penguinboo</nombre>
+            <rareza>A</rareza>
+            <habilidad>Lanza bloques de hielo acumulando anomalía glacial en el campo.</habilidad>
+            <imagen_boo>recursos/Penguinboo_Portrait.webp</imagen_boo>
+        </bangboo_def>
+        <bangboo_def id="b_rocketboo">
+            <nombre>Rocketboo</nombre>
+            <rareza>S</rareza>
+            <habilidad>Lanza misiles ardientes que aplican gran cantidad de Anomalía Ígnea.</habilidad>
+            <imagen_boo>recursos/Rocketboo_Portrait.webp</imagen_boo>
+        </bangboo_def>
+    </diccionario_bangboos>
+
+    <bangboos_equipados>
+        <bangboo_agente id_agente="ellen_joe" id_bangboo="b_tiburonboo"/>
+        <bangboo_agente id_agente="anby_demara" id_bangboo="b_amillion"/>
+        <bangboo_agente id_agente="billy_kid" id_bangboo="b_amillion"/>
+        <bangboo_agente id_agente="von_lycaon" id_bangboo="b_mayordomo"/>
+        <bangboo_agente id_agente="nicole_demara" id_bangboo="b_amillion"/>
+        <bangboo_agente id_agente="koleda_belobog" id_bangboo="b_safety"/>
+        <bangboo_agente id_agente="grace_howard" id_bangboo="b_plugboo"/>
+        <bangboo_agente id_agente="anton_ivanov" id_bangboo="b_electroboo"/>
+        <bangboo_agente id_agente="ben_bigger" id_bangboo="b_safety"/>
+        <bangboo_agente id_agente="nekomata" id_bangboo="b_amillion"/>
+        <bangboo_agente id_agente="corin_wickes" id_bangboo="b_mayordomo"/>
+        <bangboo_agente id_agente="soukaku" id_bangboo="b_penguinboo"/>
+        <bangboo_agente id_agente="rina" id_bangboo="b_mayordomo"/>
+        <bangboo_agente id_agente="soldier_11" id_bangboo="b_rocketboo"/>
+    </bangboos_equipados>
+
+    <equipos>
+        <equipo id_agente="ellen_joe">
+            <comp>Ellen Joe + Von Lycaon + Soukaku</comp>
+            <motivo>Composición meta monohielo. Von Lycaon inflige aturdimiento masivo reduciendo la resistencia al hielo del enemigo, mientras Soukaku transfiere un bono gigante de ATK directamente a Ellen para ejecutar su ráfaga de tijeras cargada.</motivo>
+        </equipo>
+        <equipo id_agente="anby_demara">
+            <comp>Anby Demara + Billy Kid + Nicole Demara</comp>
+            <motivo>El escuadrón inicial clásico de las Liebres Asturas. Nicole junta a los enemigos en un vórtice de éter y reduce su defensa, Anby los aturde rápidamente con su espada electrificada y Billy limpia la sala usando sus ráfagas de área.</motivo>
+        </equipo>
+        <equipo id_agente="billy_kid">
+            <comp>Billy Kid + Anby Demara + Nicole Demara</comp>
+            <motivo>Funciona bajo la misma sinergia táctica de posicionamiento. Billy se beneficia activamente del control de masas que genera Nicole con sus maletines de agujeros negros.</motivo>
+        </equipo>
+        <equipo id_agente="von_lycaon">
+            <comp>Von Lycaon + Ellen Joe + Soukaku</comp>
+            <motivo>Como pilar del control monohielo, Lycaon maximiza el multiplicador de vulnerabilidad por aturdimiento en un 150%, permitiendo que los golpes críticos glaciales destrocen a los jefes de Cavidad.</motivo>
+        </equipo>
+        <equipo id_agente="nicole_demara">
+            <comp>Nicole Demara + Anby Demara + Billy Kid</comp>
+            <motivo>Sinergia principal de los Cunning Hares. Nicole junta a los objetivos y reduce su defensa (ideal para el daño en área de Billy), mientras Anby genera aturdimiento de manera consistente.</motivo>
+        </equipo>
+        <equipo id_agente="koleda_belobog">
+            <comp>Koleda Belobog + Ben Bigger + Anton Ivanov</comp>
+            <motivo>Equipo central de Belobog. Koleda y Ben tienen ataques especiales vinculados (daño ígneo y de aturdimiento incrementados). Anton explota a los enemigos aturdidos con su taladro de daño continuo.</motivo>
+        </equipo>
+        <equipo id_agente="grace_howard">
+            <comp>Grace Howard + Anton Ivanov + Rina</comp>
+            <motivo>Equipo meta de Anomalía/Eléctrico. Grace aplica Electrocución extremadamente rápido, permitiendo que Anton inflija daño masivo explotando la anomalía. Rina aporta penetración de defensa al escuadrón.</motivo>
+        </equipo>
+        <equipo id_agente="anton_ivanov">
+            <comp>Anton Ivanov + Grace Howard + Koleda Belobog</comp>
+            <motivo>Variante de Belobog. Grace prepara el terreno con electrocución y Koleda aturde rápidamente a los jefes, dejando que Anton entre en el campo con la energía al máximo para usar su taladro.</motivo>
+        </equipo>
+        <equipo id_agente="ben_bigger">
+            <comp>Ben Bigger + Koleda Belobog + Soldier 11</comp>
+            <motivo>Equipo mono-ígneo. Ben aporta escudos y aumenta el crítico del equipo. Junto a Koleda, aturden y protegen mientras Soldier 11 ejecuta el daño de fuego constante.</motivo>
+        </equipo>
+        <equipo id_agente="nekomata">
+            <comp>Nekomata + Anby Demara + Nicole Demara</comp>
+            <motivo>Trío letal Físico-Cunning Hares. Nicole reúne enemigos y rompe armaduras, Anby los aturde dejándolos indefensos, y Nekomata entra por la espalda para ejecutar daños masivos en área.</motivo>
+        </equipo>
+        <equipo id_agente="corin_wickes">
+            <comp>Corin Wickes + Von Lycaon + Rina</comp>
+            <motivo>Sinergia de Victoria Housekeeping. Lycaon aturde con bonificación de daño adicional y Corin interviene como DPS secundario haciendo un daño de ráfaga destructivo sobre los enemigos indefensos.</motivo>
+        </equipo>
+        <equipo id_agente="soukaku">
+            <comp>Soukaku + Ellen Joe + Von Lycaon</comp>
+            <motivo>El núcleo Monohielo. Soukaku proporciona un bono altísimo de Ataque con su estandarte antes de ceder el campo a Ellen para que aproveche el aturdimiento generado por Lycaon.</motivo>
+        </equipo>
+        <equipo id_agente="rina">
+            <comp>Rina + Grace Howard + Anton Ivanov</comp>
+            <motivo>Composición meta de daño eléctrico. Rina proporciona penetración de defensa al escuadrón y Grace aplica Electrocución rápidamente, mientras Anton finaliza el trabajo infligiendo daño explosivo sobre el estado elemental.</motivo>
+        </equipo>
+        <equipo id_agente="soldier_11">
+            <comp>Soldier 11 + Koleda Belobog + Ben Bigger</comp>
+            <motivo>Equipo mono-ígneo altamente resistente. Ben otorga escudos y aumenta la probabilidad de crítico, Koleda se encarga de aturdir rápidamente a los enemigos, y Soldier 11 castiga a los objetivos aturdidos y quemados.</motivo>
+        </equipo>
+    </equipos>
+
+    <habilidades_lista>
+        <skills id_agente="ellen_joe">
+            <orden>Ataque Básico &gt; Ataque Especial &gt; Esquiva &gt; Ataque Combinado</orden>
+        </skills>
+        <skills id_agente="anby_demara">
+            <orden>Ataque Especial &gt; Ataque Básico &gt; Ataque Combinado &gt; Esquiva</orden>
+        </skills>
+        <skills id_agente="billy_kid">
+            <orden>Ataque Básico &gt; Esquiva &gt; Ataque Combinado &gt; Ataque Especial</orden>
+        </skills>
+        <skills id_agente="von_lycaon">
+            <orden>Ataque Especial &gt; Ataque Combinado &gt; Ataque Básico &gt; Esquiva</orden>
+        </skills>
+        <skills id_agente="zhu_yuan">
+            <orden>Ataque Básico &gt; Ataque Combinado &gt; Ataque Especial &gt; Esquiva</orden>
+        </skills>
+        <skills id_agente="nicole_demara">
+            <orden>Ataque Especial &gt; Ataque Combinado &gt; Ataque Básico &gt; Esquiva</orden>
+        </skills>
+        <skills id_agente="koleda_belobog">
+            <orden>Ataque Básico &gt; Ataque Especial &gt; Ataque Combinado &gt; Esquiva</orden>
+        </skills>
+        <skills id_agente="grace_howard">
+            <orden>Ataque Especial &gt; Ataque Básico &gt; Ataque Combinado &gt; Esquiva</orden>
+        </skills>
+        <skills id_agente="anton_ivanov">
+            <orden>Ataque Básico &gt; Ataque Especial &gt; Ataque Combinado &gt; Esquiva</orden>
+        </skills>
+        <skills id_agente="ben_bigger">
+            <orden>Ataque Especial &gt; Ataque Combinado &gt; Ataque Básico &gt; Esquiva</orden>
+        </skills>
+        <skills id_agente="nekomata">
+            <orden>Ataque Básico &gt; Esquiva &gt; Ataque Combinado &gt; Ataque Especial</orden>
+        </skills>
+        <skills id_agente="corin_wickes">
+            <orden>Ataque Especial &gt; Ataque Combinado &gt; Ataque Básico &gt; Esquiva</orden>
+        </skills>
+        <skills id_agente="soukaku">
+            <orden>Ataque Especial &gt; Ataque Combinado &gt; Ataque Básico &gt; Esquiva</orden>
+        </skills>
+        <skills id_agente="rina">
+            <orden>Ataque Especial &gt; Ataque Combinado &gt; Ataque Básico &gt; Esquiva</orden>
+        </skills>
+        <skills id_agente="soldier_11">
+            <orden>Ataque Básico &gt; Ataque Especial &gt; Ataque Combinado &gt; Esquiva</orden>
+        </skills>
+    </habilidades_lista>
 </database>

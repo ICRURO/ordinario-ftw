@@ -16,8 +16,26 @@
         <a id="link-discos" href="#">Discos</a>
         <a id="link-bangboo" href="#">Bangboo</a>
         <a id="link-sinergia" href="#">Equipos</a>
-        <a id="link-habilidades" href="#">Habilidades</a>
     </nav>
+
+    <section class="card-zzz" style="margin-bottom: 20px;">
+        <h2>Filtros de W-Engines</h2>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: center; margin-top: 10px;">
+            <div>
+                <label for="filtro-wengine-nombre" style="font-weight:bold; display:block;">Buscar por Nombre:</label>
+                <input type="search" id="filtro-wengine-nombre" placeholder="Ej. Deep Sea...">
+            </div>
+            <div>
+                <label for="filtro-wengine-rareza" style="font-weight:bold; display:block;">Rareza:</label>
+                <select id="filtro-wengine-rareza" style="padding: 10px; background: #111; color: white; border: 1px solid var(--text-muted); border-radius: 4px;">
+                    <option value="">Todas</option>
+                    <option value="S">Rango S</option>
+                    <option value="A">Rango A</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
     <div id="wengines-ctx">Cargando datos de Inter-Knot...</div>
     <script src="app.js"></script>
 </body>
