@@ -316,22 +316,22 @@
         <disco_def id="d_polar">
             <nombre>Metal polar</nombre>
             <efecto>Aumenta el daño glacial y potencia los ataques tras aplicar congelación.</efecto>
-            <imagen_disco>recursos/Drive_Disc_Polar_Metal_icon.webp</imagen_disco>
+            <imagen_disco>recursos/Drive_Disc_Polar_Metal_Icon.webp</imagen_disco>
         </disco_def>
         <disco_def id="d_woodpecker">
             <nombre>Tecno pícido</nombre>
             <efecto>Probabilidad de Crítico +8 %.</efecto>
-            <imagen_disco>recursos/Drive_Disc_Woodpecker_Electro_icon.webp</imagen_disco>
+            <imagen_disco>recursos/Drive_Disc_Woodpecker_Electro_Icon.webp</imagen_disco>
         </disco_def>
         <disco_def id="d_shockstar">
             <nombre>Disco sacudestrellas</nombre>
             <efecto>Impacto +6 %. Aumenta masivamente el aturdimiento infligido.</efecto>
-            <imagen_disco>recursos/Drive_Disc_Shockstar_Disco_icon.webp</imagen_disco>
+            <imagen_disco>recursos/Drive_Disc_Shockstar_Disco_Icon.webp</imagen_disco>
         </disco_def>
         <disco_def id="d_swing_jazz">
             <nombre>Jazz Oscilante</nombre>
             <efecto>Recuperación de Energía +20 %. Aumenta daño del equipo tras definitiva.</efecto>
-            <imagen_disco>recursos/Drive_Disc_Swing_Jazz_icon.webp</imagen_disco>
+            <imagen_disco>recursos/Drive_Disc_Swing_Jazz_Icon.webp</imagen_disco>
         </disco_def>
         <disco_def id="d_dawn_bloom">
             <nombre>Floración del amanecer</nombre>
@@ -341,7 +341,7 @@
         <disco_def id="d_chaotic_metal">
             <nombre>Metal caótico</nombre>
             <efecto>Daño etéreo +10 %.</efecto>
-            <imagen_disco>recursos/Drive_Disc_Chaotic_Metal_icon.webp</imagen_disco>
+            <imagen_disco>recursos/Drive_Disc_Chaotic_Metal_Icon.webp</imagen_disco>
         </disco_def>
         <disco_def id="d_thunder_metal">
             <nombre>Thunder Metal</nombre>
